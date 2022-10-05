@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Home</title>
+    <script>
+        function sendPost(event) {
+            const div = document.getElementById('container');
+            event.preventDefault()
+            console.log("sendPOst kaldt")
+            var payload = {
+                name: "Jens"
+            };
+            fetch("http://localhost:8080/createUser",
+                {
+                    method: "POST",
+                    body: JSON.stringify(payload),
+                    headers:{'content-type': 'application/json'}
+                })
+                .then(function (res) {
+                    console.log("back 1")
+                    div.insertAdjacentHTML(
+                        'beforeend',
+                        `<span style="background-color: green">` + JSON.stringify(res) + `</code>`,
+                    );
+                    return res.json();
+                })
+                .then(function (data) {
+                    console.log("back 2")
+                    div.insertAdjacentHTML(
+                    'beforeend',
+                    `<span style="background-color: cyan">` + JSON.stringify(data) + `</code>`,
+                    );
+                })
+        }
+    </script>
+</head>
+<body>
+<form onsubmit="sendPost(event)">
+<input type="text" value="Ole">
+<input type="submit" value="Send">
+</form>
+<div id="container">Initial Text</div>
+</body>
+</html>
