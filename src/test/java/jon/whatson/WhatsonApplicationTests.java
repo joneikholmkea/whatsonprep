@@ -3,10 +3,10 @@ package jon.whatson;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
-@SpringBootTest
+//@SpringBootTest
 class WhatsonApplicationTests {
 
-    @Test
+//    @Test
     void contextLoads() {
     }
 
