@@ -9,9 +9,9 @@ import java.util.UUID;
 public class WhatsonApplication {
 
     public static void main(String[] args) {
-        UUID uuid = UUID.randomUUID();
-        System.out.println("unique key: ");
-        System.out.println(uuid.toString());
+//        UUID uuid = UUID.randomUUID();
+//        System.out.println("unique key: ");
+//        System.out.println(uuid.toString());
         SpringApplication.run(WhatsonApplication.class, args);
     }
 
