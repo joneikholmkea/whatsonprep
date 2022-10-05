@@ -19,6 +19,12 @@ public class UserController {
         this.userService = userService;
     }
 
+
+    @GetMapping("/")
+    public ResponseEntity<String> index(){
+        return new ResponseEntity<>("UserController ready.", HttpStatus.OK);
+    }
+
     @PostMapping(path ="/createUser", consumes="application/json")
     public ResponseEntity<User> createUser(@RequestBody User user){
         String msg="";
