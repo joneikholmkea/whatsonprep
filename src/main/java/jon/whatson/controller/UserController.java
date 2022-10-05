@@ -22,7 +22,7 @@ public class UserController {
 
     @GetMapping("/")
     public ResponseEntity<String> index(){
-        return new ResponseEntity<>("UserController ready.", HttpStatus.OK);
+        return new ResponseEntity<>("UserController ready now.", HttpStatus.OK);
     }
 
     @PostMapping(path ="/createUser", consumes="application/json")
